@@ -13,7 +13,7 @@ namespace ListaDeTarefas.ConfigureMap
             builder.Property(x => x.Titulo).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Concluido).IsRequired();
             builder.Property(x => x.DataCriacao).IsRequired();
-            builder.Property(x => x.status).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

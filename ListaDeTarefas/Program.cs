@@ -1,6 +1,8 @@
 using ListaDeTarefas.Data;
 using ListaDeTarefas.Repositorio;
 using ListaDeTarefas.Repositorio.Interfaces;
+using ListaDeTarefas.Service;
+using ListaDeTarefas.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -22,6 +24,7 @@ namespace ListaDeTarefas
                   builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
+            builder.Services.AddScoped<ITarefaService, TarefaService>();
 
             var app = builder.Build();
 

@@ -15,7 +15,8 @@ namespace ListaDeTarefas.Repositorio
             _context = context;
           
         }
-        public async Task<TarefaModel?> GetById(int id)
+
+        public async Task<TarefaModel?> BuscarPorId(int id)
         {
             return await _context.Tarefas.FindAsync(id);
         }

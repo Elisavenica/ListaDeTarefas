@@ -1,13 +1,13 @@
 ﻿using ListaDeTarefas.Models;
 
-namespace ListaDeTarefas.Repositorio.Interfaces
+namespace ListaDeTarefas.Service.Interfaces
 {
-    public interface ITarefaRepositorio
+    public interface ITarefaService
     {
         Task<IEnumerable<TarefaModel>> GetAll();
         Task<TarefaModel?> BuscarPorId(int id);
         Task<TarefaModel> CreateAsync(TarefaModel model);
-        Task<TarefaModel> UpdateAsync(TarefaModel model);
-        Task DeleteAsync (int id);
+        Task<TarefaModel> AtualizarTarefa(TarefaModel model);
+        Task DeleteAsync(int id);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -16,9 +17,10 @@ namespace ListaDeTarefas.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    meta = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Titulo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Concluido = table.Column<bool>(type: "bit", nullable: false),
+                    status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
