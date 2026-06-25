@@ -9,8 +9,7 @@ namespace ListaDeTarefas.Service
     public class TarefaService : ITarefaService
     {
         private readonly AppDbContext _context;
-        private readonly ITarefaRepositorio _tarefaRepositorio;
-        private object _tarefaService;
+        private readonly ITarefaRepositorio _tarefaRepositorio;       
 
         public TarefaService(AppDbContext context, ITarefaRepositorio tarefaRepositorio)
         {
@@ -28,11 +27,10 @@ namespace ListaDeTarefas.Service
             await _tarefaRepositorio.CreateAsync(model);
             return model;
         }
+
         public async Task<TarefaModel> AtualizarTarefa(TarefaModel model)
         {
-            return await _tarefaRepositorio.Update(model);
-            return model;
-
+            return await _tarefaRepositorio.UpdateAsync(model);
         }
 
         public async Task DeleteAsync(int id)
@@ -42,7 +40,7 @@ namespace ListaDeTarefas.Service
 
         public async Task<IEnumerable<TarefaModel>> GetAll()
         {
-           return await _context.Tarefas.ToListAsync();
-        }       
+            return await _context.Tarefas.ToListAsync();
+        }
     }
 }
